@@ -1,0 +1,2750 @@
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background: #FFF5E1;
+  color: #5a3e1b;
+  overscroll-behavior-y: auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+}
+
+.muhurtham-content h2,
+.muhurtham-content p {
+  margin: 0;
+  padding: 0;
+}
+
+p, span {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: #8B0000;
+}
+
+.hero-text p {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* COMMON */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+
+
+h1, h2 {
+  color: #8B0000;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("assests/desktopbackground1.png") no-repeat center center;
+  background-size: cover;
+
+  position: relative;
+}
+
+/* 📱 Mobile Background */
+@media (max-width: 768px) {
+  .hero {
+    background: url("assests/mobilebackground1.png") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+.hero::before {
+  display: none;
+}
+
+
+.hero img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* DATE SECTION */
+.date-box {
+  background: #fff;
+  padding: 30px;
+  border: 2px solid gold;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+
+.countdown {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* EVENTS */
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #D4AF37;
+}
+
+/* VENUE */
+.venue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.venue-text {
+  max-width: 400px;
+  margin-left: 20px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #8B0000;
+  color: white;
+  padding: 20px;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hero-text h1 {
+  font-size: 2rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 245, 225, 0.6); /* soft overlay */
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background: url("assests/desktopbackground1.png") no-repeat center center;
+  background-size: cover;
+}
+
+/* Mobile background */
+@media (max-width: 768px) {
+  .hero {
+    background: url("assests/mobilebackground1.png") no-repeat center center;
+    background-size: cover;
+  }
+}
+
+/* COMMON LAYER STYLE */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 🔥 CHANGE HERE */
+  pointer-events: none;
+  
+}
+/* Individual layers */
+.layer1 {
+  bottom: 0;
+  z-index: 1;
+}
+
+.layer2 {
+  bottom: 0;
+  z-index: 2;
+}
+
+.layer3 {
+  bottom: 0;
+  z-index: 3;
+}
+
+/* TEXT ABOVE ALL */
+.hero-text {
+  position: absolute;
+  top: 62%;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+
+.layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;      /* 🔥 SAME as background */
+  background-position: center; /* 🔥 SAME as background */
+  background-repeat: no-repeat;
+}
+
+/* assign images */
+.layer1 {
+  background-image: url("assests/bananaleaves.png");
+  z-index: 1;
+}
+
+.layer2 {
+  background-image: url("assests/nameflowers1.png");
+  z-index: 2;
+}
+
+.layer3 {
+  background-image: url("assests/godimage1.png");
+  z-index: 3;
+}
+
+.layer4 {
+  background-image: url("assests/nameflowers1.png");
+  z-index: 4;
+}
+
+/* INITIAL STATE */
+.layer {
+  transform: translateY(80px) scale(1.05);
+  opacity: 0;
+  transition: transform 1.8s ease-out, opacity 1.5s ease-out;
+}
+
+/* ACTIVE STATE */
+.hero.loaded .layer {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* TEXT ANIMATION */
+.hero-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease-out;
+}
+
+.hero.loaded .hero-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.layer {
+  will-change: transform;
+}
+
+
+/* =========================
+   MUHURTHAM SECTION
+   ========================= */
+
+.muhurtham {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 0;
+}
+
+/* COMMON PARALLAX LAYER */
+.m-layer {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+  will-change: transform;
+
+  transition: none !important;
+}
+
+/* BACKGROUND */
+.m-layer1 {
+  background-image: url("assests/background2.png");
+  z-index: 1;
+}
+
+/* GOD / COUPLE IMAGE */
+.m-layer2 {
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  margin-top: 55%;
+
+  background: url("assests/godimage2.png")
+    no-repeat center 120%;
+
+  background-size: contain;
+
+  z-index: 2;
+}
+
+/* BANANA LEAVES */
+.m-layer3 {
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: url("assests/bananaleaves.png")
+    no-repeat center bottom;
+
+  background-size: contain;
+
+  z-index: 3;
+}
+
+/* MUHURTHAM CONTENT */
+.muhurtham-content {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 120px;
+  padding: 0;
+
+  text-align: center;
+
+  will-change: transform;
+  transition: none !important;
+}
+
+/* TITLE */
+.m-title {
+  font-size: 3rem;
+  color: #8B0000;
+
+  letter-spacing: 2px;
+  margin-bottom: 0;
+
+  text-transform: uppercase;
+}
+
+/* SUB TEXT */
+.m-sub {
+  font-size: 1.2rem;
+  color: #a67c52;
+
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* DATE */
+.m-date {
+  font-size: 1.8rem;
+  color: #5a3e1b;
+
+  margin-bottom: 0;
+}
+
+/* TIME */
+.muhurtham .time {
+  font-size: 2.5rem;
+  color: #4b4004;
+
+  font-weight: bold;
+}
+
+/* DIVIDER */
+.m-divider {
+  width: 80px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    gold,
+    transparent
+  );
+
+  margin: 0 auto;
+}
+
+/* BOTTOM NOTE */
+.m-note {
+  font-size: 1.1rem;
+  color: #6b4c2a;
+
+  margin-top: 10px;
+}
+
+/* VENUE FULL SCREEN */
+.venue-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 0; /* 🔥 important */
+}
+
+/* COMMON LAYER */
+/* MATCH MUHURTHAM EXACTLY */
+.v-layer {
+
+  inset: 0;
+
+  background-position: center center; /* 🔥 force exact center */
+  background-repeat: no-repeat;
+
+}
+
+/* MAIN BACKGROUND (Temple Image) */
+.v-layer1 {
+  position: absolute;
+  inset: 0;
+
+  background: url("assests/background3.png") no-repeat center/cover;
+  z-index: 1;
+}
+
+/* OPTIONAL DECOR */
+.v-layer2 {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: url("assests/bananaleaves.png") no-repeat bottom center;
+  background-size: contain;
+
+  z-index: 2;
+}
+
+/* TEMPLE IMAGE LAYER (like hero god image) */
+.v-layer3 {
+    margin-bottom: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: url("assests/templeimg.png") no-repeat center top;
+  background-size: contain;
+
+  z-index: 3;
+}
+
+
+/* CONTENT */
+.venue-content {
+  position: absolute;
+  bottom: 140px;   /* ✅ push text to bottom */
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  color: #5a3e1b;
+}
+/* TITLE STYLE */
+.venue-content h2 {
+  font-size: 3rem;
+  color: #8B0000;
+}
+
+@media (max-width: 768px) {
+  .v-layer1 {
+    background-position: 42% center; /* 🔥 MAGIC FIX */
+  }
+}
+.temple-img {
+  position: absolute;
+  top: -60px; /* 🔥 move image upward */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.temple-img img {
+  width: 480px;   /* 🔥 control size here */
+  height: auto;   /* ✅ keeps 9:16 ratio PERFECT */
+}
+
+.banana-img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.banana-img img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.temple-img,
+.banana-img {
+  will-change: transform;
+}
+
+.temple-img,
+.banana-img,
+.venue-content {
+  will-change: transform;
+transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 380px) and (max-height: 700px) {
+
+  /* TEMPLE IMAGE FIX */
+  .v-layer3 {
+    
+    margin-bottom: 0;              /* ❌ remove old push */
+    height: 100%;
+    background-position: center 20%;  /* push slightly down */
+    background-size: contain;
+  }
+
+  /* BANANA LEAVES FIX */
+  .v-layer2 {
+    height: 60%;
+    background-position: bottom center;
+  }
+
+  /* TEXT POSITION FIX */
+  .venue-content {
+    bottom: 40px;   /* move text slightly up */
+    padding: 0 10px;
+  }
+
+  .venue-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .venue-content p {
+    font-size: 1rem;
+  }
+
+}
+
+/* =========================================================
+   PREMIUM WEDDING EVENTS CARDS
+   3D depth + layered gold shine + luxury glass finish
+   ========================================================= */
+
+/* Events area */
+.events-section {
+  position: relative;
+  min-height: auto;
+  padding: 58px 15px 64px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.events-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+}
+
+.e-title {
+  font-size: clamp(2.3rem, 5vw, 3rem);
+  color: #8B0000;
+  margin: 0 0 32px;
+  letter-spacing: 2px;
+}
+
+/* Background layers */
+.e-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.e-layer1 {
+  background: url("assests/background2.png") no-repeat center/cover;
+  z-index: 1;
+}
+
+/* Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  padding: 0 20px;
+  max-width: 430px;
+  margin: auto;
+}
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.event-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  padding: 18px 14px;
+
+  /* Premium warm glass surface */
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 250, 237, 0.90) 48%,
+      rgba(250, 238, 207, 0.84) 100%
+    );
+
+  /* Gold layered border */
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background-clip: padding-box;
+
+  /* Strong 3D depth */
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(120, 76, 12, 0.12) inset,
+    0 5px 0 rgba(150, 108, 25, 0.12),
+    0 12px 22px rgba(74, 48, 17, 0.16),
+    0 24px 42px rgba(74, 48, 17, 0.10);
+
+  transform: translateY(0) perspective(900px) rotateX(0deg);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+
+  /* Gold border ring without taking space */
+  outline: 1px solid rgba(212, 175, 55, 0.62);
+  outline-offset: -1px;
+
+  /* Keeps shine clipped inside the card */
+  will-change: transform;
+}
+
+/* Elegant inner gold frame */
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 13px;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.45) inset,
+    0 0 16px rgba(212, 175, 55, 0.08);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Animated diagonal gold shine */
+.event-card::after {
+  content: "";
+  position: absolute;
+  top: -70%;
+  left: -90%;
+  width: 55%;
+  height: 240%;
+  transform: rotate(28deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 30%,
+    rgba(255, 244, 190, 0.42) 48%,
+    rgba(255, 255, 255, 0.08) 60%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.7;
+  animation: eventGoldShine 5.5s ease-in-out infinite;
+}
+
+@keyframes eventGoldShine {
+  0%, 55% {
+    left: -90%;
+  }
+  75%, 100% {
+    left: 150%;
+  }
+}
+
+/* Lift + deeper shadow */
+.event-card:hover {
+  transform: translateY(-11px) perspective(900px) rotateX(2deg) scale(1.035);
+  filter: saturate(1.04);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.98) inset,
+    0 -2px 0 rgba(120, 76, 12, 0.14) inset,
+    0 6px 0 rgba(150, 108, 25, 0.16),
+    0 18px 32px rgba(74, 48, 17, 0.20),
+    0 30px 55px rgba(74, 48, 17, 0.15),
+    0 0 28px rgba(212, 175, 55, 0.16);
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+.event-card .icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  z-index: 5;
+}
+
+.event-card .icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+
+  padding: 9px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 248, 222, 0.88) 58%,
+      rgba(232, 207, 139, 0.55) 100%
+    );
+
+  border: 1px solid rgba(212, 175, 55, 0.65);
+
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.95) inset,
+    0 4px 8px rgba(74, 48, 17, 0.14),
+    0 8px 16px rgba(74, 48, 17, 0.10),
+    0 0 12px rgba(212, 175, 55, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.event-card:hover .icon img {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 1) inset,
+    0 6px 12px rgba(74, 48, 17, 0.18),
+    0 0 20px rgba(212, 175, 55, 0.24);
+}
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+.event-card h3 {
+  position: relative;
+  z-index: 5;
+  color: #8B0000;
+  font-size: 1.85rem;
+  line-height: 1;
+  margin: 5px 0 8px;
+  letter-spacing: 0.5px;
+}
+
+.event-card .date {
+  position: relative;
+  z-index: 5;
+  display: block;
+  color: #6c4a20;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.event-card p {
+  position: relative;
+  z-index: 5;
+  color: #8B0000;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 5px 0 0;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .events-section {
+    padding: 50px 12px 58px;
+  }
+
+  .e-title {
+    font-size: 2.3rem;
+    margin-bottom: 27px;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    max-width: 340px;
+    padding: 0 4px;
+  }
+
+  .event-card {
+    padding: 14px 8px;
+    border-radius: 16px;
+  }
+
+  .event-card::before {
+    inset: 6px;
+    border-radius: 11px;
+  }
+
+  .event-card .icon {
+    margin-bottom: 7px;
+  }
+
+  .event-card .icon img {
+    width: 43px;
+    height: 43px;
+    padding: 7px;
+  }
+
+  .event-card h3 {
+    font-size: 1.42rem;
+    margin: 4px 0 6px;
+  }
+
+  .event-card .date {
+    font-size: 0.68rem;
+  }
+
+  .event-card p {
+    font-size: 0.68rem;
+    margin-top: 4px;
+  }
+
+  .event-card:hover {
+    transform: translateY(-7px) perspective(900px) rotateX(1deg) scale(1.025);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .events-grid {
+    gap: 10px;
+    max-width: 320px;
+  }
+
+  .event-card {
+    padding: 12px 6px;
+  }
+
+  .event-card .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .event-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .event-card .date {
+    font-size: 0.62rem;
+  }
+
+  .event-card p {
+    font-size: 0.63rem;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .event-card,
+  .event-card .icon img {
+    transition: none;
+  }
+
+  .event-card::after {
+    animation: none;
+  }
+
+  .event-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   WEDDING EVENTS — 3 CARD BALANCED ALIGNMENT
+   ========================================================= */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(760px, 100%);
+  max-width: 760px;
+  padding: 0 10px;
+  margin: 0 auto;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.event-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet: keep the three cards balanced when there is enough room */
+@media (max-width: 992px) and (min-width: 577px) {
+  .events-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: min(680px, 100%);
+  }
+}
+
+/* Mobile: two cards on the first row, third card centered below */
+@media (max-width: 576px) {
+  .events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    width: min(340px, 100%);
+    max-width: 340px;
+    padding: 0 4px;
+  }
+
+  .event-card:last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - 13px) / 2);
+    justify-self: center;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .events-grid {
+    gap: 10px;
+    width: min(320px, 100%);
+    max-width: 320px;
+  }
+
+  .event-card:last-child {
+    width: calc((100% - 10px) / 2);
+  }
+}
+
+/* =========================================================
+   PREMIUM GALLERY CAROUSEL — PERFECT IMAGE FIT
+   Keeps the original image ratio and prevents cropping.
+   ========================================================= */
+
+.carousel {
+    position: relative;
+    width: min(100%, 456px);
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff8eb;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    display: block;
+    flex: 0 0 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+
+/* Keep portrait wedding images beautifully framed on mobile */
+@media (max-width: 576px) {
+  .carousel {
+    width: min(100%, 335px);
+    border-radius: 16px;
+  }
+
+  .carousel-track img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* GOLD OVERLAY */
+.carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
+}
+
+/* BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.3);
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* DOTS */
+/* Dots Fix */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.carousel-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #d5c5ad;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-dots span.active {
+    background: #b88948;
+    width: 22px;
+    border-radius: 10px;
+}
+
+.carousel-counter {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #8b7355;
+}
+
+
+footer {
+  position: relative;
+  background: linear-gradient(135deg, #5c0a0a, #8B0000);
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  overflow: hidden;
+}
+
+/* 🌿 decorative overlay */
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* content */
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* top message */
+.footer-line {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* divider */
+.footer-divider {
+  width: 120px;
+  height: 2px;
+  margin: 25px auto;
+  background: linear-gradient(to right, transparent, gold, transparent);
+}
+
+/* with love */
+.footer-love {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* names */
+.footer-names {
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  color: #f5d28c;
+  font-weight: 700;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* small glow animation */
+.footer-names {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  }
+}
+
+
+/* COUNTDOWN SECTION */
+.countdown-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff5e1, #fdf1dc);
+  text-align: center;
+}
+
+/* BOX */
+.countdown-box {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.countdown-title {
+  font-size: 2.5rem;
+  color: #8B0000;
+  margin-bottom: 30px;
+}
+
+/* WRAPPER */
+.countdown-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* TIME BOX */
+.time-box {
+  flex: 1;
+  padding: 15px;
+
+  border-radius: 12px;
+  background: rgba(255,255,255,0.8);
+
+  border: 1px solid gold;
+}
+
+/* NUMBERS */
+.time-box span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a3e1b;
+}
+
+/* LABEL */
+.time-box p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .countdown-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .time-box {
+    width: 48%;
+  }
+}
+
+/* =========================================================
+   PREMIUM VENUE MAP BUTTON
+   Elegant gold glass finish + animated shine
+   ========================================================= */
+.map-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 8px;
+  padding: 12px 24px;
+  min-width: 150px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b88920 0%,
+      #d4af37 28%,
+      #f7df9a 50%,
+      #d4af37 72%,
+      #a97816 100%
+    );
+
+  color: #5a3e1b;
+  border: 1px solid rgba(255, 239, 170, 0.95);
+  border-radius: 30px;
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.85) inset,
+    0 -1px 0 rgba(117,77,12,0.18) inset,
+    0 7px 16px rgba(74,48,17,0.18),
+    0 0 0 1px rgba(212,175,55,0.22);
+
+  transform: translateY(0);
+  transition:
+    transform 0.35s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+
+  isolation: isolate;
+}
+
+/* Fine inner frame */
+.map-btn::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255,255,255,0.38);
+  border-radius: 26px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Moving luxury shine */
+.map-btn::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -75%;
+  width: 42%;
+  height: 260%;
+  transform: rotate(27deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.05) 28%,
+    rgba(255,255,255,0.78) 48%,
+    rgba(255,248,210,0.22) 62%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  animation: mapButtonShine 4.5s ease-in-out infinite;
+}
+
+@keyframes mapButtonShine {
+  0%, 52% {
+    left: -75%;
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  76%, 100% {
+    left: 145%;
+    opacity: 0;
+  }
+}
+
+/* Hover / desktop interaction */
+.map-btn:hover {
+  transform: translateY(-4px) scale(1.035);
+  filter: saturate(1.08);
+  box-shadow:
+    0 3px 0 rgba(255,255,255,0.95) inset,
+    0 -1px 0 rgba(117,77,12,0.2) inset,
+    0 11px 22px rgba(74,48,17,0.24),
+    0 0 24px rgba(212,175,55,0.28);
+}
+
+/* Pressed state */
+.map-btn:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Keyboard accessibility */
+.map-btn:focus-visible {
+  outline: 2px solid #8B0000;
+  outline-offset: 4px;
+}
+
+/* Mobile refinement */
+@media (max-width: 576px) {
+  .map-btn {
+    margin-top: 6px;
+    padding: 11px 21px;
+    min-width: 142px;
+    font-size: 0.82rem;
+    border-radius: 28px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .map-btn {
+    transition: none;
+  }
+
+  .map-btn::after {
+    animation: none;
+  }
+
+  .map-btn:hover {
+    transform: none;
+  }
+}
+
+
+
+/* =========================================================
+   CLEAN PREMIUM PARENTS / BLESSINGS SECTION
+   Minimal luxury — balanced spacing, no visual clutter
+   ========================================================= */
+
+.parents-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 64px 20px 68px;
+  text-align: center;
+  background: #fff8eb;
+}
+
+/* Very subtle background ornament */
+.parents-section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(212, 175, 55, 0.10);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Heading */
+.parents-title {
+  margin: 0;
+  color: #8B0000;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.15rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 1.5px;
+}
+
+.parents-heading-rule {
+  width: 56px;
+  height: 1px;
+  margin: 14px auto 34px;
+  background: #d4af37;
+}
+
+/* Two clean cards */
+.parents-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: min(820px, 100%);
+  margin: 0 auto;
+}
+
+/* Card */
+.parent-side {
+  position: relative;
+  min-width: 0;
+  padding: 30px 28px 27px;
+  overflow: hidden;
+  border: 1px solid rgba(180, 137, 40, 0.48);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.94);
+  box-shadow: 0 12px 32px rgba(83, 57, 25, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Single restrained inner frame */
+.parent-side::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 11px;
+  pointer-events: none;
+}
+
+/* Remove decorative clutter from previous version */
+.parent-side::after {
+  display: none;
+}
+
+.parent-side:hover {
+  transform: translateY(-5px);
+  border-color: rgba(180, 137, 40, 0.78);
+  box-shadow: 0 18px 38px rgba(83, 57, 25, 0.12);
+}
+
+/* Small elegant top mark */
+.parent-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 16px;
+  color: #b58a28;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  line-height: 34px;
+  z-index: 1;
+}
+
+.parent-mark::before,
+.parent-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: #d4af37;
+  opacity: 0.7;
+}
+
+.parent-mark::before {
+  right: calc(100% + 7px);
+}
+
+.parent-mark::after {
+  left: calc(100% + 7px);
+}
+
+/* Parent label */
+.parent-side .label {
+  position: relative;
+  margin: 0 0 13px;
+  color: #a67c52;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* Names */
+.parent-side h3 {
+  position: relative;
+  margin: 0;
+  color: #4f371f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.25px;
+  z-index: 1;
+}
+
+/* Clean ampersand */
+.parent-side span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 25px;
+  margin: 8px 0;
+  color: #8B0000;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 25px;
+  z-index: 1;
+}
+
+.parent-side span::before,
+.parent-side span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.55);
+}
+
+.parent-side span::before {
+  right: calc(50% + 20px);
+}
+
+.parent-side span::after {
+  left: calc(50% + 20px);
+}
+
+/* Small finishing line */
+.parent-blessing {
+  margin: 15px 0 0;
+  color: #a67c52;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* The center divider from the old design is intentionally hidden */
+.parent-divider {
+  display: none;
+}
+
+/* Keep existing reveal animation */
+.parents-section.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.parents-section.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 760px) {
+  .parents-wrapper {
+    grid-template-columns: 1fr;
+    width: min(500px, 100%);
+    gap: 14px;
+  }
+
+  .parent-side {
+    padding: 27px 24px 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .parents-section {
+    padding: 54px 14px 58px;
+  }
+
+  .parents-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .parents-heading-rule {
+    margin: 11px auto 25px;
+  }
+
+  .parents-wrapper {
+    gap: 12px;
+  }
+
+  .parent-side {
+    padding: 24px 19px 21px;
+    border-radius: 14px;
+  }
+
+  .parent-side::before {
+    inset: 6px;
+    border-radius: 10px;
+  }
+
+  .parent-mark {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 13px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .parent-mark::before,
+  .parent-mark::after {
+    width: 22px;
+  }
+
+  .parent-side .label {
+    margin-bottom: 10px;
+    font-size: 0.6rem;
+    letter-spacing: 1.7px;
+  }
+
+  .parent-side h3 {
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+
+  .parent-side span {
+    height: 23px;
+    margin: 6px 0;
+    font-size: 1.15rem;
+    line-height: 23px;
+  }
+
+  .parent-side span::before,
+  .parent-side span::after {
+    width: 25px;
+  }
+
+  .parent-side span::before {
+    right: calc(50% + 18px);
+  }
+
+  .parent-side span::after {
+    left: calc(50% + 18px);
+  }
+
+  .parent-blessing {
+    margin-top: 12px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .parents-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .parents-title {
+    font-size: 1.8rem;
+  }
+
+  .parent-side {
+    padding: 22px 16px 19px;
+  }
+
+  .parent-side h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parent-side,
+  .parents-section.reveal {
+    transition: none;
+  }
+
+  .parent-side:hover {
+    transform: none;
+  }
+}
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+
+  background: url("assests/introbghindu.png") no-repeat center center;
+  background-size: cover;
+
+  z-index: 9999;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("assests/introbghindu.png") no-repeat center center;
+  background-size: cover;
+
+  filter: blur(2px);
+  transform: scale(1.1);
+
+  z-index: 0;   /* 🔥 stays behind everything */
+}
+
+
+
+.hand {
+  position: absolute;
+
+  height: 100vh;
+  width: auto;
+
+  min-width: 60vw;   /* 🔥 THIS FIXES SLIM LOOK */
+  max-width: none;
+
+  object-fit: contain;
+
+  transform-origin: center;
+
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* GODDESS HAND (LEFT) */
+/* INITIAL VISIBLE POSITION */
+.goddess {
+  left: -10%;   /* 🔥 bring inside */
+  bottom: -30%;  /* 🔥 adjust height */
+  transform: rotate(-8deg) scale(0.95);
+  z-index: 2;
+  
+}
+
+.god {
+  right: -10%;  /* 🔥 bring inside */
+  top: -30%;     /* 🔥 adjust height */
+  transform: rotate(10deg) scale(0.95);
+}
+
+
+/* TEXT */
+.tap-text {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.4; }
+}
+
+/* ✨ ACTIVE STATE (HANDS COME & TOUCH) */
+.intro-screen.active .goddess {
+  bottom: 5%;
+  left: 15%;
+  transform: rotate(0deg) scale(2.05);
+}
+
+.intro-screen.active .god {
+  top: 5%;
+  right: 10%;
+  transform: rotate(0deg) scale(2.05);
+}
+
+/* FADE OUT */
+.intro-screen.hide {
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+
+
+.divine-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  background: radial-gradient(circle, rgba(255,215,0,0.9), transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  opacity: 0;
+  z-index: 3;
+  transition: all 0.8s ease;
+}
+
+/* when hands touch */
+.intro-screen.active .divine-light {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}
+
+.intro-screen.flash .divine-light {
+  width: 200vw;
+  height: 200vw;
+  opacity: 1;
+  transition: all 0.9s ease-in;
+}
+
+
+
+
+/* =========================================================
+   WEDDING EVENTS — MOBILE ONE-BY-ONE LAYOUT
+   ========================================================= */
+@media (max-width: 576px) {
+  .events-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    width: min(340px, 100%);
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 0 4px;
+  }
+
+  .events-grid .event-card,
+  .events-grid .event-card:last-child {
+    width: 100%;
+    max-width: 340px;
+    grid-column: auto;
+    justify-self: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .events-grid {
+    width: min(320px, 100%);
+    max-width: 320px;
+    gap: 16px;
+  }
+
+  .events-grid .event-card,
+  .events-grid .event-card:last-child {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* =========================================================
+   WEDDING EVENTS — MOBILE CONTENT SIZE FIX
+   Keep the card size exactly the same, enlarge only
+   the content inside each card.
+   ========================================================= */
+@media (max-width: 576px) {
+  .events-grid .event-card {
+    /* Keep the card dimensions EXACTLY the same */
+    aspect-ratio: 1 / 1;
+    padding: 18px 12px;
+  }
+
+  /* Larger, more prominent event icon */
+  .events-grid .event-card .icon {
+    margin-bottom: 12px;
+  }
+
+  .events-grid .event-card .icon img {
+    width: 78px;
+    height: 78px;
+    padding: 9px;
+  }
+
+  /* Larger event name */
+  .events-grid .event-card h3 {
+    font-size: 2.2rem;
+    line-height: 1.05;
+    margin: 5px 0 9px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Larger date */
+  .events-grid .event-card .date {
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+  }
+
+  /* Larger time */
+  .events-grid .event-card p {
+    font-size: 0.98rem;
+    line-height: 1.25;
+    margin-top: 6px;
+  }
+}
+
+/* Small phones — keep content prominent without changing card size */
+@media (max-width: 380px) {
+  .events-grid .event-card {
+    padding: 16px 10px;
+  }
+
+  .events-grid .event-card .icon {
+    margin-bottom: 10px;
+  }
+
+  .events-grid .event-card .icon img {
+    width: 70px;
+    height: 70px;
+    padding: 8px;
+  }
+
+  .events-grid .event-card h3 {
+    font-size: 2.05rem;
+    line-height: 1.05;
+    margin: 4px 0 8px;
+  }
+
+  .events-grid .event-card .date {
+    font-size: 0.94rem;
+    line-height: 1.3;
+  }
+
+  .events-grid .event-card p {
+    font-size: 0.92rem;
+    margin-top: 5px;
+  }
+}
+
+
+/* =========================================================
+   PREMIUM CARD ENTRANCE + MICRO-INTERACTIONS
+   Lightweight: transform/opacity only, triggered on reveal
+   ========================================================= */
+
+/* PARENTS CARDS */
+.parents-wrapper .parent-side {
+  opacity: 0;
+  transform: translateY(34px) scale(0.97);
+  will-change: transform, opacity;
+}
+
+.parents-section.reveal.active .parents-wrapper .parent-side {
+  animation: parentCardIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.parents-section.reveal.active .parents-wrapper .parent-side:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.parents-section.reveal.active .parents-wrapper .parent-side:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+@keyframes parentCardIn {
+  0% {
+    opacity: 0;
+    transform: translateY(34px) scale(0.97);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.008);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Elegant breathing mark after card entrance */
+.parents-section.reveal.active .parent-mark {
+  animation: parentMarkReveal 0.7s ease-out 0.45s both;
+}
+
+@keyframes parentMarkReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.8) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Soft sweep across each parent card */
+.parent-side {
+  --card-shine-x: -130%;
+}
+
+.parent-side::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -35%;
+  left: var(--card-shine-x);
+  width: 42%;
+  height: 170%;
+  transform: rotate(24deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08) 35%,
+    rgba(255,244,190,0.42) 50%,
+    rgba(255,255,255,0.08) 65%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+}
+
+.parents-section.reveal.active .parent-side::after {
+  animation: parentCardShine 1.4s ease-out 0.45s both;
+}
+
+@keyframes parentCardShine {
+  0% { left: -130%; opacity: 0; }
+  12% { opacity: 0.9; }
+  100% { left: 150%; opacity: 0; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .parent-side:hover {
+    transform: translateY(-8px) scale(1.012);
+    box-shadow: 0 20px 42px rgba(83, 57, 25, 0.14);
+  }
+
+  .parent-side:hover .parent-mark {
+    transform: scale(1.08) rotate(3deg);
+  }
+}
+
+/* WEDDING EVENT CARDS */
+.events-grid .event-card {
+  opacity: 0;
+  transform: translateY(42px) scale(0.94) rotateX(4deg);
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+.events-content.reveal.active .events-grid .event-card {
+  animation: eventCardIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.events-content.reveal.active .events-grid .event-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.events-content.reveal.active .events-grid .event-card:nth-child(2) {
+  animation-delay: 0.20s;
+}
+
+.events-content.reveal.active .events-grid .event-card:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes eventCardIn {
+  0% {
+    opacity: 0;
+    transform: translateY(42px) scale(0.94) rotateX(4deg);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.015) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+/* Icon arrives slightly after its card */
+.events-content.reveal.active .event-card .icon {
+  animation: eventIconIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+@keyframes eventIconIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.72);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtle icon breathing while visible */
+.events-content.reveal.active .event-card .icon img {
+  animation: eventIconBreath 3.8s ease-in-out 1.2s infinite;
+}
+
+@keyframes eventIconBreath {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.035); }
+}
+
+/* Keep the existing gold shine, but make the card entrance feel layered */
+.events-content.reveal.active .event-card::after {
+  animation-delay: calc(0.45s + var(--event-delay, 0s));
+}
+
+.events-grid .event-card:nth-child(1) { --event-delay: 0s; }
+.events-grid .event-card:nth-child(2) { --event-delay: 0.12s; }
+.events-grid .event-card:nth-child(3) { --event-delay: 0.24s; }
+
+@media (hover: hover) and (pointer: fine) {
+  .event-card:hover .icon img {
+    animation-play-state: paused;
+  }
+}
+
+/* Reduced motion: keep content immediately visible and remove motion */
+@media (prefers-reduced-motion: reduce) {
+  .parents-wrapper .parent-side,
+  .events-grid .event-card {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+
+  .parents-section.reveal.active .parent-mark,
+  .events-content.reveal.active .event-card .icon,
+  .events-content.reveal.active .event-card .icon img,
+  .parent-side::after {
+    animation: none !important;
+  }
+
+  .parent-side::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   FINAL WEDDING EVENTS CARD SIZE — COMPACT MOBILE
+   Reduce empty space while keeping the enlarged content
+   ========================================================= */
+@media (max-width: 576px) {
+  .events-grid {
+    width: min(300px, calc(100vw - 36px));
+    max-width: 300px;
+    gap: 16px;
+  }
+
+  .events-grid .event-card,
+  .events-grid .event-card:last-child {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 380px) {
+  .events-grid {
+    width: min(270px, calc(100vw - 30px));
+    max-width: 270px;
+    gap: 14px;
+  }
+
+  .events-grid .event-card,
+  .events-grid .event-card:last-child {
+    width: 100%;
+    max-width: 270px;
+  }
+}
+
+
+/* =========================================================
+   WEDDING MUSIC — PREMIUM ICON-ONLY ON/OFF CONTROL
+   Matches the website's warm ivory + gold + deep red palette.
+   ========================================================= */
+#weddingMusic {
+  display: none;
+}
+
+.music-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10000;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(212, 175, 55, 0.82);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 32% 25%,
+      rgba(255,255,255,0.98),
+      rgba(255,248,222,0.94) 58%,
+      rgba(239,218,163,0.88) 100%
+    );
+
+  color: #8B0000;
+
+  box-shadow:
+    0 7px 20px rgba(74, 48, 17, 0.18),
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 0 0 3px rgba(212,175,55,0.08);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  opacity: 0;
+  transform: translateY(14px) scale(0.9);
+  pointer-events: none;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.music-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(212,175,55,0.28);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.music-toggle.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.music-toggle:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 11px 28px rgba(74, 48, 17, 0.22),
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 0 18px rgba(212,175,55,0.18);
+}
+
+.music-toggle:active {
+  transform: translateY(0) scale(0.94);
+}
+
+.music-toggle:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+.music-toggle .music-icon {
+  position: relative;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-toggle .music-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.music-toggle .music-on-icon {
+  color: #8B0000;
+}
+
+.music-toggle .music-off-icon {
+  display: none;
+  color: #8B0000;
+}
+
+.music-toggle.is-off {
+  background:
+    radial-gradient(
+      circle at 32% 25%,
+      rgba(255,255,255,0.98),
+      rgba(255,249,241,0.94) 58%,
+      rgba(246,231,218,0.88) 100%
+    );
+  border-color: rgba(139, 0, 0, 0.28);
+  box-shadow:
+    0 7px 20px rgba(74, 48, 17, 0.15),
+    0 1px 0 rgba(255,255,255,0.95) inset;
+}
+
+.music-toggle.is-off .music-on-icon {
+  display: none;
+}
+
+.music-toggle.is-off .music-off-icon {
+  display: inline-flex;
+}
+
+/* Gentle sound-wave movement while music is ON */
+.music-toggle:not(.is-off) .wave-one {
+  animation: musicWaveOne 1.15s ease-in-out infinite;
+}
+
+.music-toggle:not(.is-off) .wave-two {
+  animation: musicWaveTwo 1.15s ease-in-out infinite;
+}
+
+@keyframes musicWaveOne {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 1; }
+}
+
+@keyframes musicWaveTwo {
+  0%, 100% { opacity: 0.28; }
+  50% { opacity: 0.9; }
+}
+
+@media (max-width: 576px) {
+  .music-toggle {
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .music-toggle .music-icon,
+  .music-toggle .music-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle,
+  .music-toggle .music-icon svg {
+    transition: none;
+  }
+
+  .music-toggle:not(.is-off) .wave-one,
+  .music-toggle:not(.is-off) .wave-two {
+    animation: none;
+  }
+}
+/* Getting the Bride ready — slightly larger */
+
+/* Bride event heading */
+.events-grid .event-card:first-child h3 {
+  font-size: 1.65rem;
+  line-height: 1.12;
+}
+
+@media (max-width: 576px) {
+  .events-grid .event-card:first-child h3 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 380px) {
+  .events-grid .event-card:first-child h3 {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* SCRATCH CARD EFFECT */
+.events-grid .event-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.scratch-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  touch-action: none;
+  cursor: grab;
+  border-radius: inherit;
+}
+
+.scratch-layer.scratched {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* Falling flower petals */
+.flower-petal {
+  position: fixed;
+  top: -40px;
+  z-index: 9999;
+  pointer-events: none;
+  line-height: 1;
+  animation: flowerFall linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes flowerFall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(var(--drift), 110vh, 0)
+      rotate(var(--spin));
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-petal {
+    animation-duration: 2s;
+  }
+}
+/* Keep the scratch layer fitted inside each event card */
+.events-grid .event-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.events-grid .event-card .scratch-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 20;
+    border-radius: inherit;
+    touch-action: none;
+    cursor: grab;
+}
+
+/* Flower animation */
+.flower-petal {
+    position: fixed;
+    top: -35px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: flowerFall linear forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translate3d(0, -10px, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(var(--drift), 110vh, 0)
+            rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+.events-grid .event-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.events-grid .event-card .scratch-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+    border-radius: inherit;
+    z-index: 50;
+    touch-action: none;
+}
+
+/* SCRATCH CARD EFFECT */
+.events-grid .event-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.events-grid .event-card .scratch-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: inherit;
+  z-index: 50;
+  touch-action: none;
+  cursor: grab;
+}
+
+.scratch-layer.scratched {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* Falling flower petals */
+.flower-petal {
+  position: fixed;
+  top: -35px;
+  z-index: 9999;
+  pointer-events: none;
+  line-height: 1;
+  animation: flowerFall linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes flowerFall {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(var(--drift), 110vh, 0)
+      rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+/* Scratch-card positioning */
+.events-grid .event-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.events-grid .event-card canvas.scratch-layer {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+    z-index: 50;
+    touch-action: none;
+    cursor: crosshair;
+}
+
+.events-grid .event-card canvas.scratch-layer[style*="opacity: 0"] {
+    pointer-events: none;
+}
+
+/* Falling flowers */
+.flower-petal {
+    position: fixed;
+    top: -35px;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    animation-name: flowerFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translate3d(0, -10px, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(var(--drift, 0px), 110vh, 0)
+                   rotate(var(--spin, 360deg));
+        opacity: 0;
+    }
+}
+
+
+/* Keep event cards interactive */
+.events-grid .event-card {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Scratch canvas receives touches only while active */
+.events-grid .event-card canvas.scratch-layer {
+    z-index: 50;
+    touch-action: none;
+}
+
+/* Once scratched, the canvas must not block taps */
+.events-grid .event-card canvas.scratch-layer[style*="opacity: 0"] {
+    pointer-events: none !important;
+}
+
+/* Keep the calendar button tappable */
+.calendar-btn {
+    position: relative;
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.muhurtham-content .calendar-btn {
+    display: inline-block !important;
+    position: relative;
+    z-index: 100;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 24px;
+    padding: 13px 28px;
+    border: 1px solid #b58b3b;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fff5d6, #e6c779);
+    color: #702d20 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(80, 40, 10, 0.15);
+    cursor: pointer;
+}
+
+.muhurtham-content .calendar-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(80, 40, 10, 0.22);
+}
